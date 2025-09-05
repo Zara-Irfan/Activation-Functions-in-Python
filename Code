@@ -1,0 +1,76 @@
+"""
+Activation Functions in Python
+Author: Muhammad
+Description: Implementation of common activation functions used in Deep Learning
+             with example outputs.
+"""
+
+import math
+
+# -------------------------
+# Sigmoid Function
+# -------------------------
+def sigmoid(x):
+    """
+    Sigmoid activation function
+    Output range: (0, 1)
+    """
+    return 1 / (1 + math.exp(-x))
+
+# Test examples for sigmoid
+sigmoid_examples = [100, 1, -56, 0.5]
+print("Sigmoid Function Outputs:")
+for val in sigmoid_examples:
+    print(f"sigmoid({val}) = {sigmoid(val)}")
+print("-" * 40)
+
+# -------------------------
+# Tanh Function
+# -------------------------
+def tanh(x):
+    """
+    Hyperbolic Tangent activation function
+    Output range: (-1, 1)
+    """
+    return (math.exp(x) - math.exp(-x)) / (math.exp(x) + math.exp(-x))
+
+# Test examples for tanh
+tanh_examples = [-56, 50, 1, 0.99]
+print("Tanh Function Outputs:")
+for val in tanh_examples:
+    print(f"tanh({val}) = {tanh(val)}")
+print("-" * 40)
+
+# -------------------------
+# ReLU Function
+# -------------------------
+def relu(x):
+    """
+    Rectified Linear Unit (ReLU) activation function
+    Output: x if x>0 else 0
+    """
+    return max(0, x)
+
+# Test examples for ReLU
+relu_examples = [-7, 8]
+print("ReLU Function Outputs:")
+for val in relu_examples:
+    print(f"relu({val}) = {relu(val)}")
+print("-" * 40)
+
+# -------------------------
+# Leaky ReLU Function
+# -------------------------
+def leaky_relu(x):
+    """
+    Leaky ReLU activation function
+    Output: x if x>0 else 0.1*x
+    """
+    return max(0.1 * x, x)
+
+# Test examples for Leaky ReLU
+leaky_relu_examples = [-100, 8]
+print("Leaky ReLU Function Outputs:")
+for val in leaky_relu_examples:
+    print(f"leaky_relu({val}) = {leaky_relu(val)}")
+print("-" * 40)
